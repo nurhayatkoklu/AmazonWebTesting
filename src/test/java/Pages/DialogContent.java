@@ -20,23 +20,25 @@ public class DialogContent extends Parent {
     @FindBy(id = "searchDropdownBox")
     public WebElement allSelectMenu;
 
+    @FindBy(id="twotabsearchtextbox")
+    public WebElement textBox;
+
     @FindBy(id = "nav-search-submit-button")
     private WebElement searchButton;
 
     @FindBy(xpath = "//span[text()='Motorcycle & Powersports']")
     private WebElement motorcycleTitle;
 
+    @FindBy(css = "span[class='a-color-state a-text-bold']")
+    private WebElement confirmingText;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
 
         switch (strElement) {
-
-//            case "x":
-//                myElement = x;
-//                break;
+            case"textBox":myElement = textBox;break;
         }
-
         sendKeysFunction(myElement, value);
     }
 
@@ -47,29 +49,24 @@ public class DialogContent extends Parent {
             case "searchButton":
                 myElement = searchButton;
                 break;
-
             case "motorcycleTitle":
                 myElement = motorcycleTitle;
                 break;
         }
-
         clickFunction(myElement);
 
     }
 
     public void findAndContainsText(String strElement, String text) {
+
         switch (strElement) {
-
-//            case "assertPage":
-//                myElement = x;
-//                break;
-
+            case"confirmingText": myElement=confirmingText;break;
         }
-
         verifyContainsText(myElement, text);
     }
 
     public void findAndSelect(String strElement, String value) {
+
         switch (strElement) {
             case "allSelectMenu":
                 myElement = allSelectMenu;
