@@ -1,22 +1,19 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.interactions.Actions;
 
-import javax.swing.*;
 import java.util.List;
 
 public class Home_Kitchen {
     DialogContent dc = new DialogContent();
 
-    @When("Send Home & Kitchen option through text box")
-    public void sendHomeKitchenOptionThroughTextBox() {
-        dc.findAndSend("textBox", "Home & Kitchen");
+    @When("Send option as {string} through text box")
+    public void sendOptionAsThroughTextBox(String option) {
+        dc.findAndSend("textBox",option);
     }
 
     @And("Click on search button")
@@ -41,14 +38,15 @@ public class Home_Kitchen {
     public void TheItemShouldBeAddedToTheCart() {
         dc.findAndContainsText("confirmingText2","Added to Cart");
     }
-    @Then("the cart should be empty")
-    public void theCartShouldBeEmpty() {
-        dc.findAndContainsText("confirmingText3","Your Amazon Cart is empty");
-    }
 
     @And("Click on the Executive Chair and adding to cart")
     public void clickOnTheExecutiveChairAndAddingToCart() {
         dc.findAndAction("executiveChair");
         dc.findAndClick("addToCart");
     }
+    @Then("The cart should be empty")
+    public void TheCartShouldBeEmpty() {
+        dc.findAndContainsText("confirmingText3","Your Amazon Cart is empty");
+    }
+
 }

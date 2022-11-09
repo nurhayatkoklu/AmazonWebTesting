@@ -4,7 +4,7 @@ Feature:Home & Kitchen Department
     Given Navigate to basqar
 
   Scenario:
-    When Send Home & Kitchen option through text box
+    When Send option as "Home & Kitchen" through text box
     And Click on search button
     Then Results page should appear
 
@@ -24,5 +24,5 @@ Feature:Home & Kitchen Department
     |quantity|
     |delete|
 
-    Then the cart should be empty
+    Then The cart should be empty
 
