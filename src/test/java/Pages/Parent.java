@@ -4,7 +4,10 @@ import Utilities.GWD;
 import junit.framework.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -33,6 +36,7 @@ public class Parent {
 
     public void clickFunction(WebElement element)
     {
+        waitUntilVisible(element);
         scrollToElement(element);
         waitUntilClickable(element);
         element.click();
@@ -48,10 +52,24 @@ public class Parent {
         waitUntilVisible(element);
         Assert.assertTrue(element.getText().toLowerCase().contains(text.toLowerCase()));
     }
+    public void selectAndFind(WebElement element, String text)
+    {
+        Select menu = new Select(element);
+        menu.selectByVisibleText(text);
+    }
     public List<WebElement> waitVisibleListAllElement(List<WebElement> elementList) {
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
         return elementList;
     }
+    public void actionFunction(WebElement element){
+        Actions actions = new Actions(GWD.getDriver());
+        waitUntilClickable(element);
+        Action action=actions.moveToElement(element).click().build();
+        action.perform();
+
+    }
+
+
 
 }
