@@ -4,12 +4,6 @@ import Utilities.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.List;
 
 public class DialogContent extends Parent {
 
@@ -21,7 +15,7 @@ public class DialogContent extends Parent {
     public WebElement allSelectMenu;
 
     @FindBy(id="twotabsearchtextbox")
-    public WebElement textBox;
+    private WebElement textBox;
 
     @FindBy(id = "nav-search-submit-button")
     private WebElement searchButton;
@@ -29,8 +23,34 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Motorcycle & Powersports']")
     private WebElement motorcycleTitle;
 
-    @FindBy(css = "span[class='a-color-state a-text-bold']")
-    private WebElement confirmingText;
+    @FindBy (xpath = "//span[contains(text(),'Price and other details')]")
+    private WebElement confirmingText1;
+
+    @FindBy(css = "li[id='n/1055398']")
+    private WebElement homeAndKitchen;
+
+    @FindBy(xpath="//li[@id='n/1063306']")
+    private WebElement furniture;
+    @FindBy(xpath = "//span[@class='s-color-swatch-inner-circle-fill' and @style='background-color: #574944']")
+    private WebElement compDesk;
+
+    @FindBy (css = "input[id='add-to-cart-button']")
+    private WebElement addToCart;
+
+    @FindBy (css = "[class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']")
+    private WebElement confirmingText2;
+
+    @FindBy (css = "span[id='nav-cart-count']")
+    private WebElement goToCart;
+
+    @FindBy (xpath = "//i[@class='a-icon a-icon-dropdown']")
+    private WebElement quantity;
+
+    @FindBy (id="quantity_0")
+    private WebElement delete;
+
+    @FindBy (css = "[class='a-spacing-mini a-spacing-top-base']")
+    private WebElement confirmingText3;
 
     WebElement myElement;
 
@@ -47,11 +67,24 @@ public class DialogContent extends Parent {
         switch (strElement) {
 
             case "searchButton":
-                myElement = searchButton;
-                break;
+                myElement = searchButton;break;
             case "motorcycleTitle":
-                myElement = motorcycleTitle;
-                break;
+                myElement = motorcycleTitle;break;
+
+            case "homeAndKitchen":
+                myElement = homeAndKitchen;break;
+            case "furniture":
+                myElement = furniture;break;
+            case "compDesk":
+                myElement = compDesk;break;
+            case "addToCart":
+                myElement = addToCart;break;
+            case "goToCart":
+                myElement = goToCart;break;
+            case "quantity":
+                myElement = quantity;break;
+            case "delete":
+                myElement = delete;break;
         }
         clickFunction(myElement);
 
@@ -60,7 +93,9 @@ public class DialogContent extends Parent {
     public void findAndContainsText(String strElement, String text) {
 
         switch (strElement) {
-            case"confirmingText": myElement=confirmingText;break;
+            case "confirmingText1": myElement = confirmingText1;break;
+            case "confirmingText2": myElement = confirmingText2;break;
+            case "confirmingText3": myElement = confirmingText3;break;
         }
         verifyContainsText(myElement, text);
     }

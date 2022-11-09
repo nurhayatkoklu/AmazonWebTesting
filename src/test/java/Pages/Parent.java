@@ -34,6 +34,7 @@ public class Parent {
 
     public void clickFunction(WebElement element)
     {
+        waitUntilVisible(element);
         scrollToElement(element);
         waitUntilClickable(element);
         element.click();
