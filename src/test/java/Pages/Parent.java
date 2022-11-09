@@ -4,6 +4,8 @@ import Utilities.GWD;
 import junit.framework.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -34,6 +36,7 @@ public class Parent {
 
     public void clickFunction(WebElement element)
     {
+        waitUntilVisible(element);
         scrollToElement(element);
         waitUntilClickable(element);
         element.click();
@@ -59,5 +62,14 @@ public class Parent {
         wait.until(ExpectedConditions.visibilityOfAllElements(elementList));
         return elementList;
     }
+    public void actionFunction(WebElement element){
+        Actions actions = new Actions(GWD.getDriver());
+        waitUntilClickable(element);
+        Action action=actions.moveToElement(element).click().build();
+        action.perform();
+
+    }
+
+
 
 }
