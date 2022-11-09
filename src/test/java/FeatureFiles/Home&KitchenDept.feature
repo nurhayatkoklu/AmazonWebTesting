@@ -11,13 +11,18 @@ Feature:Home & Kitchen Department
     When Click on the following elements
     |homeAndKitchen|
     |furniture|
-    |compDesk|
-    |addToCart|
-    Then the item should be added to the cart
+    |homeOfficeFurniture|
+    |officeChairs|
+    |deskChairs|
+
+    And Click on the Executive Chair and adding to cart
+
+    Then The item should be added to the cart
 
     When Click on the following elements
     |goToCart|
     |quantity|
     |delete|
+
     Then the cart should be empty
 

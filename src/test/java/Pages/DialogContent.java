@@ -14,7 +14,7 @@ public class DialogContent extends Parent {
     @FindBy(id = "searchDropdownBox")
     public WebElement allSelectMenu;
 
-    @FindBy(id="twotabsearchtextbox")
+    @FindBy(id = "twotabsearchtextbox")
     private WebElement textBox;
 
     @FindBy(id = "nav-search-submit-button")
@@ -23,33 +23,43 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Motorcycle & Powersports']")
     private WebElement motorcycleTitle;
 
-    @FindBy (xpath = "//span[contains(text(),'Price and other details')]")
+    @FindBy(xpath = "//span[contains(text(),'Price and other details')]")
     private WebElement confirmingText1;
 
-    @FindBy(css = "li[id='n/1055398']")
+    @FindBy(xpath = "//span[text()='Home & Kitchen']")
     private WebElement homeAndKitchen;
 
-    @FindBy(xpath="//li[@id='n/1063306']")
+    @FindBy(xpath = "//span[text()='Furniture']")
     private WebElement furniture;
-    @FindBy(xpath = "//span[@class='s-color-swatch-inner-circle-fill' and @style='background-color: #574944']")
-    private WebElement compDesk;
 
-    @FindBy (css = "input[id='add-to-cart-button']")
+    @FindBy(xpath = "//span[text()='Home Office Furniture']")
+    private WebElement homeOfficeFurniture;
+
+    @FindBy(xpath = "//span[text()='Office Chairs']")
+    private WebElement officeChairs;
+
+    @FindBy(xpath = "//span[text()='Home Office Desk Chairs']")
+    private WebElement deskChairs;
+
+    @FindBy(xpath = "(//span[@class='a-price-whole' and text()='108'])[1]")
+    private WebElement executiveChair;
+
+    @FindBy(css = "input[id='add-to-cart-button']")
     private WebElement addToCart;
 
-    @FindBy (css = "[class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']")
+    @FindBy(xpath = "//span[@class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']")
     private WebElement confirmingText2;
 
-    @FindBy (css = "span[id='nav-cart-count']")
+    @FindBy(css = "span[class='a-button a-spacing-top-base a-button-span12 a-button-base']")
     private WebElement goToCart;
 
-    @FindBy (xpath = "//i[@class='a-icon a-icon-dropdown']")
+    @FindBy(css = "span[class='a-button-text a-declarative']")
     private WebElement quantity;
 
-    @FindBy (id="quantity_0")
+    @FindBy(id= "quantity_0")
     private WebElement delete;
 
-    @FindBy (css = "[class='a-spacing-mini a-spacing-top-base']")
+    @FindBy(css = "[class='a-spacing-mini a-spacing-top-base']")
     private WebElement confirmingText3;
 
     WebElement myElement;
@@ -57,7 +67,9 @@ public class DialogContent extends Parent {
     public void findAndSend(String strElement, String value) {
 
         switch (strElement) {
-            case"textBox":myElement = textBox;break;
+            case "textBox":
+                myElement = textBox;
+                break;
         }
         sendKeysFunction(myElement, value);
     }
@@ -67,24 +79,40 @@ public class DialogContent extends Parent {
         switch (strElement) {
 
             case "searchButton":
-                myElement = searchButton;break;
+                myElement = searchButton;
+                break;
             case "motorcycleTitle":
-                myElement = motorcycleTitle;break;
+                myElement = motorcycleTitle;
+                break;
 
             case "homeAndKitchen":
-                myElement = homeAndKitchen;break;
+                myElement = homeAndKitchen;
+                break;
             case "furniture":
-                myElement = furniture;break;
-            case "compDesk":
-                myElement = compDesk;break;
+                myElement = furniture;
+                break;
+            case "homeOfficeFurniture":
+                myElement = homeOfficeFurniture;
+                break;
+            case "officeChairs":
+                myElement = officeChairs;
+                break;
+            case "deskChairs":
+                myElement = deskChairs;
+                break;
+
             case "addToCart":
-                myElement = addToCart;break;
+                myElement = addToCart;
+                break;
             case "goToCart":
-                myElement = goToCart;break;
+                myElement = goToCart;
+                break;
             case "quantity":
-                myElement = quantity;break;
+                myElement = quantity;
+                break;
             case "delete":
-                myElement = delete;break;
+                myElement = delete;
+                break;
         }
         clickFunction(myElement);
 
@@ -93,9 +121,12 @@ public class DialogContent extends Parent {
     public void findAndContainsText(String strElement, String text) {
 
         switch (strElement) {
-            case "confirmingText1": myElement = confirmingText1;break;
-            case "confirmingText2": myElement = confirmingText2;break;
-            case "confirmingText3": myElement = confirmingText3;break;
+            case "confirmingText1":
+                myElement = confirmingText1;break;
+            case "confirmingText2":
+                myElement = confirmingText2;break;
+            case "confirmingText3":
+                myElement = confirmingText3;break;
         }
         verifyContainsText(myElement, text);
     }
@@ -107,7 +138,15 @@ public class DialogContent extends Parent {
                 myElement = allSelectMenu;
                 break;
         }
-        selectAndFind(allSelectMenu,value);
+        selectAndFind(allSelectMenu, value);
+    }
 
+    public void findAndAction(String strElement) {
+        switch (strElement) {
+            case "executiveChair":
+                myElement = executiveChair;
+                break;
+        }
+        actionFunction(myElement);
     }
 }

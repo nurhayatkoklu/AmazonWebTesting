@@ -1,11 +1,14 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
+import Utilities.GWD;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.interactions.Actions;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Home_Kitchen {
@@ -34,12 +37,18 @@ public class Home_Kitchen {
             dc.findAndClick(listElement.get(i));
         }
     }
-    @Then("the item should be added to the cart")
-    public void theItemShouldBeAddedToTheCart() {
+    @Then("The item should be added to the cart")
+    public void TheItemShouldBeAddedToTheCart() {
         dc.findAndContainsText("confirmingText2","Added to Cart");
     }
     @Then("the cart should be empty")
     public void theCartShouldBeEmpty() {
         dc.findAndContainsText("confirmingText3","Your Amazon Cart is empty");
+    }
+
+    @And("Click on the Executive Chair and adding to cart")
+    public void clickOnTheExecutiveChairAndAddingToCart() {
+        dc.findAndAction("executiveChair");
+        dc.findAndClick("addToCart");
     }
 }
