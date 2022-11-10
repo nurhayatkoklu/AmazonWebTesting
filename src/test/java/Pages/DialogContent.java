@@ -62,6 +62,9 @@ public class DialogContent extends Parent {
     @FindBy(css = "[class='a-spacing-mini a-spacing-top-base']")
     private WebElement confirmingText3;
 
+    @FindBy(css = "h2[class='a-size-large a-spacing-base']")
+    private WebElement booksHeader;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
@@ -127,6 +130,9 @@ public class DialogContent extends Parent {
                 myElement = confirmingText2;break;
             case "confirmingText3":
                 myElement = confirmingText3;break;
+            case "booksHeader":
+                myElement = booksHeader;break;
+
         }
         verifyContainsText(myElement, text);
     }
