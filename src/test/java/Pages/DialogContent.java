@@ -26,6 +26,9 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Motorcycle & Powersports']")
     private WebElement motorcycleTitle;
 
+    @FindBy(xpath = "//*[contains(text(),'Best sellers')]")
+    private WebElement booksHeader;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
@@ -63,6 +66,7 @@ public class DialogContent extends Parent {
 //            case "assertPage":
 //                myElement = x;
 //                break;
+            case "booksHeader" : myElement = booksHeader; break;
 
         }
 
