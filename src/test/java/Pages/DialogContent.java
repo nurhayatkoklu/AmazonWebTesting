@@ -62,6 +62,39 @@ public class DialogContent extends Parent {
     @FindBy(css = "[class='a-spacing-mini a-spacing-top-base']")
     private WebElement confirmingText3;
 
+    @FindBy(css = "h2[class='a-size-large a-spacing-base']")
+    private WebElement booksHeader;
+
+    @FindBy(css = "div[class='fst-h1-st pageBanner'] h1")
+    private WebElement baslikYazisi;
+
+    @FindBy(xpath = "//span[text()='Shave & Hair Removal']")
+    private WebElement shaveAndHairRemovalBtn;
+
+    @FindBy(id = "s-result-sort-select")
+    private WebElement miniSelectMenu;
+
+    @FindBy(xpath = "(//span[text()='& Up'])[1]")
+    private WebElement filtre4YildizVeUzeri;
+
+    @FindBy(xpath = "//span[text()='$200 & Above']")
+    private WebElement filtre200DolarVeUzeriBirim;
+
+    @FindBy(xpath = "//span[text()='Premium Selection']")
+    private WebElement filtrePremiumSelection;
+
+    @FindBy(xpath = "//span[text()='Amazon.com']")
+    private WebElement filtreSellerAmazon;
+
+    @FindBy(css = "div[class='a-section a-spacing-small a-spacing-top-small'] span")
+    private WebElement geriyeKalanAramaSonucu;
+
+    @FindBy(css = "h1[id='title'] span")
+    private WebElement urunAdi;
+
+    @FindBy(css = "span[class='a-text-bold']+span")
+    private WebElement ururBilgi;
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
@@ -113,6 +146,21 @@ public class DialogContent extends Parent {
             case "delete":
                 myElement = delete;
                 break;
+            case "shaveAndHairRemovalBtn":
+                myElement = shaveAndHairRemovalBtn;
+                break;
+            case "filtre4YildizVeUzeri":
+                myElement = filtre4YildizVeUzeri;
+                break;
+            case "filtre200DolarVeUzeriBirim":
+                myElement = filtre200DolarVeUzeriBirim;
+                break;
+            case "filtrePremiumSelection":
+                myElement = filtrePremiumSelection;
+                break;
+            case "filtreSellerAmazon":
+                myElement = filtreSellerAmazon;
+                break;
         }
         clickFunction(myElement);
 
@@ -127,6 +175,13 @@ public class DialogContent extends Parent {
                 myElement = confirmingText2;break;
             case "confirmingText3":
                 myElement = confirmingText3;break;
+            case "booksHeader":
+                myElement = booksHeader;break;
+            case "baslikYazisi":
+                myElement = baslikYazisi;break;
+            case "geriyeKalanAramaSonucu":
+                myElement = geriyeKalanAramaSonucu;break;
+
         }
         verifyContainsText(myElement, text);
     }
@@ -136,6 +191,9 @@ public class DialogContent extends Parent {
         switch (strElement) {
             case "allSelectMenu":
                 myElement = allSelectMenu;
+                break;
+            case "miniSelectMenu":
+                myElement = miniSelectMenu;
                 break;
         }
         selectAndFind(allSelectMenu, value);
@@ -148,5 +206,15 @@ public class DialogContent extends Parent {
                 break;
         }
         actionFunction(myElement);
+    }
+
+    public WebElement getMyElement(String strElement) {
+        switch (strElement){
+            case "geriyeKalanAramaSonucu":myElement=geriyeKalanAramaSonucu;break;
+            case "urunAdi":myElement=urunAdi;break;
+            case "ururBilgi":myElement=ururBilgi;break;
+
+        }
+        return myElement;
     }
 }
