@@ -42,7 +42,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Home Office Desk Chairs']")
     private WebElement deskChairs;
 
-    @FindBy(xpath = "(//span[@class='a-price-whole' and text()='108'])[1]")
+    @FindBy(css = "div>div>div[cel_widget_id='MAIN-SEARCH_RESULTS-2'] h2 span")
     private WebElement executiveChair;
 
     @FindBy(css = "input[id='add-to-cart-button']")
@@ -96,8 +96,69 @@ public class DialogContent extends Parent {
     @FindBy(css = "span[class='a-text-bold']+span")
     private WebElement ururBilgi;
 
+
     @FindBy(css = "[class='acswidget-carousel__title']")
     private WebElement booksLastGroupElement;
+
+    @FindBy(linkText = "LEEDYA Womens Long Sleeve Mama Graphic Shirts Casual Crewneck Sweatshirt Loose Pullover Tops")
+    private WebElement christmasSweatshirt;
+
+    @FindBy(xpath = "//*[@id='sw-gtc']/span/a")
+    private WebElement gotoCart;
+
+    @FindBy(xpath = "//input[@value='Save for later']")
+    private WebElement saveForLater;
+
+    @FindBy(xpath = "(//*[@data-action='save-for-later'])[1]")
+    private WebElement verifySavedForLater;
+
+    @FindBy(xpath = "//*[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap']")
+    private WebElement cartEmpty;
+
+    @FindBy(xpath = "//*[@id='submit.add-to-cart']")
+    private WebElement addToCart2;
+    @FindBy(xpath = "//span[text()='Protective Gear']")
+    private WebElement protectiveGearTitle;
+
+    @FindBy(xpath = "//span[text()='Helmets']")
+    private WebElement helmetsTitle;
+
+    @FindBy(css = "i[class$='medium-4']")
+    private WebElement star4Up;
+
+    @FindBy(css = "li[aria-label='ILM']>span")
+    private WebElement helmetBrand;
+    @FindBy(id = "low-price")
+    private WebElement lowPriceInput;
+    @FindBy(id = "high-price")
+    private WebElement highPriceInput;
+    @FindBy(css = "input[class='a-button-input']")
+    private WebElement goButton;
+    @FindBy(css = "li[id='p_n_feature_thirteen_browse-bin/7298818011']>span")
+    private WebElement helmetVehicleType;
+    @FindBy(css = "li[id='p_n_size_seven_browse-vebin/8150031011']>span")
+    private WebElement helmetSize;
+
+    @FindBy(css = "a[title='Black']>span>div")
+    private WebElement helmetColor;
+
+    @FindBy(css = "div>div>div[cel_widget_id^='MAIN-SEARCH_RESULTS'] h2 span")
+    private WebElement helmetSelect;
+
+    @FindBy(css = "input[id='add-to-cart-button']")
+    private WebElement AddToCartButton;
+
+    @FindBy(css = "div[class$='sw-atc-message']+span")
+    private WebElement AddToCartverify;
+
+    @FindBy(css = "input[title='Delete']")
+    public WebElement deleteCartButton;
+
+    @FindBy(css = "div[class$='ewc-item-remove-msg']")
+    private WebElement deleteCartVerify;
+
+
+
 
     WebElement myElement;
 
@@ -106,6 +167,12 @@ public class DialogContent extends Parent {
         switch (strElement) {
             case "textBox":
                 myElement = textBox;
+                break;
+            case "lowPriceInput":
+                myElement = lowPriceInput;
+                break;
+            case "highPriceInput":
+                myElement = highPriceInput;
                 break;
         }
         sendKeysFunction(myElement, value);
@@ -165,6 +232,59 @@ public class DialogContent extends Parent {
             case "filtreSellerAmazon":
                 myElement = filtreSellerAmazon;
                 break;
+
+            case "christmasSweatshirt":
+                myElement = christmasSweatshirt;
+                break;
+
+            case "gotoCart":
+                myElement = gotoCart;
+                break;
+
+            case "saveForLater":
+                myElement = saveForLater;
+                break;
+
+            case "addToCart2":
+                myElement = addToCart2;
+                break;
+            case "protectiveGearTitle":
+                myElement = protectiveGearTitle;
+                break;
+            case "helmetsTitle":
+                myElement = helmetsTitle;
+                break;
+            case "star4Up":
+                myElement = star4Up;
+                break;
+            case "helmetVehicleType":
+                myElement = helmetVehicleType;
+                break;
+            case "helmetBrand":
+                myElement = helmetBrand;
+                break;
+            case "helmetSize":
+                myElement = helmetSize;
+                break;
+            case "helmetColor":
+                myElement = helmetColor;
+                break;
+            case "goButton":
+                myElement = goButton;
+                break;
+            case "helmetSelect":
+                myElement = helmetSelect;
+                break;
+            case "AddToCartButton":
+                myElement = AddToCartButton;
+                break;
+            case "deleteCartButton":
+                myElement = deleteCartButton;
+                break;
+
+
+
+
         }
         clickFunction(myElement);
 
@@ -185,6 +305,18 @@ public class DialogContent extends Parent {
                 myElement = baslikYazisi;break;
             case "geriyeKalanAramaSonucu":
                 myElement = geriyeKalanAramaSonucu;break;
+            case "verifySavedForLater":
+                myElement = verifySavedForLater;break;
+            case "cartEmpty":
+                myElement = cartEmpty;break;
+            case "deleteCartVerify":
+                myElement = deleteCartVerify;
+                break;
+            case "AddToCartverify":
+                myElement = AddToCartverify;
+                break;
+
+
 
         }
         verifyContainsText(myElement, text);
