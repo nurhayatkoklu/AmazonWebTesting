@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -95,6 +96,10 @@ public class DialogContent extends Parent {
     @FindBy(css = "span[class='a-text-bold']+span")
     private WebElement ururBilgi;
 
+
+    @FindBy(css = "[class='acswidget-carousel__title']")
+    private WebElement booksLastGroupElement;
+
     @FindBy(linkText = "LEEDYA Womens Long Sleeve Mama Graphic Shirts Casual Crewneck Sweatshirt Loose Pullover Tops")
     private WebElement christmasSweatshirt;
 
@@ -151,6 +156,7 @@ public class DialogContent extends Parent {
 
     @FindBy(css = "div[class$='ewc-item-remove-msg']")
     private WebElement deleteCartVerify;
+
 
 
 
@@ -343,6 +349,7 @@ public class DialogContent extends Parent {
             case "geriyeKalanAramaSonucu":myElement=geriyeKalanAramaSonucu;break;
             case "urunAdi":myElement=urunAdi;break;
             case "ururBilgi":myElement=ururBilgi;break;
+            case "booksLastGroupElement":myElement=booksLastGroupElement;break;
 
         }
         return myElement;
