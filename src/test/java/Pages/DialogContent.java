@@ -41,7 +41,7 @@ public class DialogContent extends Parent {
     @FindBy(xpath = "//span[text()='Home Office Desk Chairs']")
     private WebElement deskChairs;
 
-    @FindBy(xpath = "(//span[@class='a-price-whole' and text()='108'])[1]")
+    @FindBy(css = "div>div>div[cel_widget_id='MAIN-SEARCH_RESULTS-2'] h2 span")
     private WebElement executiveChair;
 
     @FindBy(css = "input[id='add-to-cart-button']")
