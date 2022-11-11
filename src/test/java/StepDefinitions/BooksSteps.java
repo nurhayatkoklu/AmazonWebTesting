@@ -9,11 +9,13 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static Utilities.GWD.Bekle;
 import static Utilities.GWD.driver;
 
 public class BooksSteps {
@@ -77,6 +79,17 @@ public class BooksSteps {
         // Best seller kısmındaki elementleri listeye atıyoruz
         List<WebElement> bestSellersList;
         bestSellersList = driver.findElements(By.id("gridItemRoot"));
+
+        // Best Sellers List 'in tamamı DOM'a gelmiyodu (12'li gruplar halinde geliyodu)
+        // waitVisibleListAllElement (Parent) fonksiyonunu kullansam bile 12 element dönüyo.
+        // O yüzden, her gelen bi parça için, son elementen sonra, değişmeyecek bi elemente scroll yaptırmak zorunda kaldım:
+        int n =0;
+        do{
+            dc.scrollToElement(dc.getMyElement("booksLastGroupElement"));
+            GWD.Bekle(1);
+            bestSellersList = driver.findElements(By.id("gridItemRoot"));
+            n= bestSellersList.size();
+        }while (n < 48);
 
         // Kontrol amaçlı konsola yazdırma işlemi
         for (WebElement items : bestSellersList) {
