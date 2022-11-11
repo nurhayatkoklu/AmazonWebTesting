@@ -9,11 +9,11 @@ Feature: Automotive Title Functionality
     And Click on the Helmets title
     And Select random product attributes from the left
     And Click on the a random helmet
-    And Select the size
     And Click add to cart
     And Verify that the product has been added to the cart
     And Delete the product from cart
     Then Verify that the product has been deleted
+
 
 
 
