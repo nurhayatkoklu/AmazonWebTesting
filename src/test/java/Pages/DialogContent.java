@@ -95,6 +95,42 @@ public class DialogContent extends Parent {
     @FindBy(css = "span[class='a-text-bold']+span")
     private WebElement ururBilgi;
 
+    @FindBy(linkText = "LEEDYA Womens Long Sleeve Mama Graphic Shirts Casual Crewneck Sweatshirt Loose Pullover Tops")
+    private WebElement christmasSweatshirt;
+
+    @FindBy(xpath = "//*[@id='sw-gtc']/span/a")
+    private WebElement gotoCart;
+
+    @FindBy(xpath = "//input[@value='Save for later']")
+    private WebElement saveForLater;
+
+    @FindBy(xpath = "(//*[@data-action='save-for-later'])[1]")
+    private WebElement verifySavedForLater;
+
+    @FindBy(xpath = "//*[@class='a-size-medium a-color-base sc-price sc-white-space-nowrap']")
+    private WebElement cartEmpty;
+
+    @FindBy(xpath = "//*[@id='submit.add-to-cart']")
+    private WebElement addToCart2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     WebElement myElement;
 
     public void findAndSend(String strElement, String value) {
@@ -161,6 +197,31 @@ public class DialogContent extends Parent {
             case "filtreSellerAmazon":
                 myElement = filtreSellerAmazon;
                 break;
+
+            case "christmasSweatshirt":
+                myElement = christmasSweatshirt;
+                break;
+
+            case "gotoCart":
+                myElement = gotoCart;
+                break;
+
+            case "saveForLater":
+                myElement = saveForLater;
+                break;
+
+            case "addToCart2":
+                myElement = addToCart2;
+                break;
+
+
+
+
+
+
+
+
+
         }
         clickFunction(myElement);
 
@@ -181,6 +242,14 @@ public class DialogContent extends Parent {
                 myElement = baslikYazisi;break;
             case "geriyeKalanAramaSonucu":
                 myElement = geriyeKalanAramaSonucu;break;
+            case "verifySavedForLater":
+                myElement = verifySavedForLater;break;
+            case "cartEmpty":
+                myElement = cartEmpty;break;
+
+
+
+
 
         }
         verifyContainsText(myElement, text);
