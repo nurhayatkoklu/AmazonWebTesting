@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class DialogContent extends Parent {
 
     public DialogContent() {
@@ -157,6 +159,54 @@ public class DialogContent extends Parent {
     @FindBy(css = "div[class$='ewc-item-remove-msg']")
     private WebElement deleteCartVerify;
 
+    //my
+    @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[1]")
+    private WebElement leftMune1;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[2]")
+    private WebElement leftMune2;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[3]")
+    private WebElement leftMune3;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[4]")
+    private WebElement leftMune4;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[5]")
+    private WebElement leftMune5;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[6]")
+    private WebElement leftMune6;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[7]")
+    private WebElement leftMune7;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[8]")
+    private WebElement leftMune8;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[9]")
+    private WebElement leftMune9;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[10]")
+    private WebElement leftMune10;
+
+      @FindBy(xpath = "(//a[@class=\"a-color-base a-link-normal\"])[11]")
+    private WebElement leftMune11;
+
+    @FindBy(css = "div[class='a-section a-spacing-small a-spacing-top-small'] span")
+    private WebElement information;
+
+    @FindBy(xpath = "(//select[@aria-describedby=\"searchDropdownDescription\"]//option)[8]")
+    private WebElement computers;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -282,7 +332,49 @@ public class DialogContent extends Parent {
                 myElement = deleteCartButton;
                 break;
 
+case "leftMune1":
+                myElement = leftMune1;
+                break;
 
+case "leftMune2":
+                myElement = leftMune2;
+                break;
+
+case "leftMune3":
+                myElement = leftMune3;
+                break;
+
+case "leftMune4":
+                myElement = leftMune4;
+                break;
+
+case "leftMune5":
+                myElement = leftMune5;
+                break;
+
+case "leftMune6":
+                myElement = leftMune6;
+                break;
+
+case "leftMune7":
+                myElement = leftMune7;
+                break;
+
+case "leftMune8":
+                myElement = leftMune8;
+                break;
+
+case "leftMune9":
+                myElement = leftMune9;
+                break;
+
+case "leftMune10":
+                myElement = leftMune10;
+                break;
+
+case "leftMune11":
+                myElement = leftMune11;
+                break;
 
 
         }
@@ -314,6 +406,10 @@ public class DialogContent extends Parent {
                 break;
             case "AddToCartverify":
                 myElement = AddToCartverify;
+                break;
+
+case "information":
+                myElement = information;
                 break;
 
 
@@ -350,6 +446,7 @@ public class DialogContent extends Parent {
             case "urunAdi":myElement=urunAdi;break;
             case "ururBilgi":myElement=ururBilgi;break;
             case "booksLastGroupElement":myElement=booksLastGroupElement;break;
+            case "information":myElement=information;break;
 
         }
         return myElement;
