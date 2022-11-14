@@ -5,6 +5,7 @@ Feature: Beauty and Personal Care
     When Verify amazon url
     Then Validate All Menu
 
+    @Muharrem
     Scenario: Checking high quality random products from the Beauty and Personal Care category
       Given Select Beauty and Personal Care from the drop-down menu
       When Click on the search button
